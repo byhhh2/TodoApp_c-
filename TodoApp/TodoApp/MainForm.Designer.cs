@@ -156,7 +156,7 @@ namespace TodoApp
         private System.Windows.Forms.Label labelFont;
         private System.Windows.Forms.Label btnAlarm;
 
-        private System.Windows.Forms.Panel panelTodoList; //
+        public System.Windows.Forms.Panel panelTodoList; //
         private Button btnTest;
     }
 }

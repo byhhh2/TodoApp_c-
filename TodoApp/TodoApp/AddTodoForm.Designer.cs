@@ -108,6 +108,7 @@ namespace TodoApp
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "등록";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.submit_todo);
             // 
             // AddTodoForm
             // 
