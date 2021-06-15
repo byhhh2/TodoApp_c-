@@ -36,11 +36,13 @@ namespace TodoApp
             this.tabTodo = new System.Windows.Forms.TabPage();
             this.panelTodoList = new System.Windows.Forms.Panel();
             this.tabDone = new System.Windows.Forms.TabPage();
+            this.panelDoneList = new System.Windows.Forms.Panel();
             this.btnAddTodo = new System.Windows.Forms.Button();
             this.labelFont = new System.Windows.Forms.Label();
             this.btnAlarm = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabTodo.SuspendLayout();
+            this.tabDone.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -75,6 +77,7 @@ namespace TodoApp
             // 
             // tabDone
             // 
+            this.tabDone.Controls.Add(this.panelDoneList);
             this.tabDone.Location = new System.Drawing.Point(4, 24);
             this.tabDone.Name = "tabDone";
             this.tabDone.Padding = new System.Windows.Forms.Padding(3);
@@ -82,6 +85,14 @@ namespace TodoApp
             this.tabDone.TabIndex = 1;
             this.tabDone.Text = "✔ Done";
             this.tabDone.UseVisualStyleBackColor = true;
+            // 
+            // panelDoneList
+            // 
+            this.panelDoneList.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelDoneList.Location = new System.Drawing.Point(0, 0);
+            this.panelDoneList.Name = "panelDoneList";
+            this.panelDoneList.Size = new System.Drawing.Size(690, 370);
+            this.panelDoneList.TabIndex = 0;
             // 
             // btnAddTodo
             // 
@@ -129,6 +140,7 @@ namespace TodoApp
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl.ResumeLayout(false);
             this.tabTodo.ResumeLayout(false);
+            this.tabDone.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +156,7 @@ namespace TodoApp
         private System.Windows.Forms.Label btnAlarm;
 
         public System.Windows.Forms.Panel panelTodoList; //
+        public System.Windows.Forms.Panel panelDoneList; //
     }
 }
 

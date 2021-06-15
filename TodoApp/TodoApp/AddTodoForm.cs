@@ -52,6 +52,8 @@ namespace TodoApp
 
             new_ck.Location = new Point(150, todoCnt * 30);
             new_ck.Name = $"ck{todoCnt}";
+            new_ck.Click += (s, e) => _mainform.chk_CheckedChanged(this, new ck_state(new_ck));
+           
 
             new_title.Text = title;
             new_title.Location = new Point(250, todoCnt * 30);
@@ -83,6 +85,15 @@ namespace TodoApp
         private void click_memo(object sender, EventArgs e)
         {
             MessageBox.Show($"{txtMemo.Text}", "memo", MessageBoxButtons.OK);
+        }
+
+        public class ck_state : EventArgs
+        {
+            public CheckBox ck;
+            public ck_state(CheckBox ck)
+            {
+                this.ck = ck;
+            }
         }
     }
 }

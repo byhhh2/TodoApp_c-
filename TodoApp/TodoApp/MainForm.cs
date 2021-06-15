@@ -12,6 +12,8 @@ namespace TodoApp
 {
     public partial class MainForm : Form
     {
+        public event EventHandler ck_eventHandler;
+
         public static int cnt = 1;
 
         public MainForm()
@@ -44,26 +46,27 @@ namespace TodoApp
             new AddTodoForm(this).ShowDialog();
         }
 
-        private void add_test(object sender, EventArgs e)
+        public void chk_CheckedChanged(object sender, EventArgs e) //영화 
         {
-            Label lbl_test = new Label();
-            CheckBox ck_test = new CheckBox(); 
+            AddTodoForm form = (AddTodoForm)sender;
+            //CheckBox form_ = (CheckBox)sender;
+            //ck_state
+            //String name = ((AddTodoForm)sender).Name;
+            //MessageBox.Show($"{name}");
 
-            lbl_test.Text = String.Format("testtest{0}", cnt);
-            //lbl_test.Name = String.Format("lbl{0}", cnt);
-            ck_test.Location = new Point(0, cnt * 20);
-            lbl_test.Location = new Point(100, cnt * 20);
+            CheckBox _ck = (e as AddTodoForm.ck_state).ck;
 
-            cnt++;
-
-            this.panelTodoList.Controls.Add(ck_test);
-            this.panelTodoList.Controls.Add(lbl_test);
-
-
-            //this.panelTodoList.Controls.Add(new Label().Text = "test");
-
+            change_state_todo(_ck);
         }
 
-        
+        public void change_state_todo(CheckBox cb)
+        {
+            if (cb.Checked)
+            {
+                MessageBox.Show($"{cb.Name}");
+            }
+        }
+
+
     }
 }
