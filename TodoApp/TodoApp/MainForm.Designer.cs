@@ -69,7 +69,7 @@ namespace TodoApp
             // 
             // panelTodoList
             // 
-            this.panelTodoList.BackColor = System.Drawing.Color.Tan;
+            //this.panelTodoList.BackColor = System.Drawing.Color.Tan;
             this.panelTodoList.Location = new System.Drawing.Point(0, 0);
             this.panelTodoList.Name = "panelTodoList";
             this.panelTodoList.Size = new System.Drawing.Size(690, 370);

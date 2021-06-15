@@ -41,11 +41,7 @@ namespace TodoApp
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            //new AddTodoForm().ShowDialog();
             new AddTodoForm(this).ShowDialog();
-            //AddTodoForm addTodoForm = new AddTodoForm(this);
-
-
         }
 
         private void add_test(object sender, EventArgs e)
