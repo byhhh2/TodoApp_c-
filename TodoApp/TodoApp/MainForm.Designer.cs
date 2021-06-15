@@ -39,7 +39,6 @@ namespace TodoApp
             this.btnAddTodo = new System.Windows.Forms.Button();
             this.labelFont = new System.Windows.Forms.Label();
             this.btnAlarm = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabTodo.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +68,6 @@ namespace TodoApp
             // 
             // panelTodoList
             // 
-            //this.panelTodoList.BackColor = System.Drawing.Color.Tan;
             this.panelTodoList.Location = new System.Drawing.Point(0, 0);
             this.panelTodoList.Name = "panelTodoList";
             this.panelTodoList.Size = new System.Drawing.Size(690, 370);
@@ -117,21 +115,10 @@ namespace TodoApp
             this.btnAlarm.TabIndex = 4;
             this.btnAlarm.Text = "  ";
             // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(307, 113);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 5;
-            this.btnTest.Text = "test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.add_test);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(984, 621);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnAlarm);
             this.Controls.Add(this.labelFont);
             this.Controls.Add(this.btnAddTodo);
@@ -157,7 +144,6 @@ namespace TodoApp
         private System.Windows.Forms.Label btnAlarm;
 
         public System.Windows.Forms.Panel panelTodoList; //
-        private Button btnTest;
     }
 }
 
