@@ -49,7 +49,46 @@ namespace TodoApp
             Label new_date = new Label();
             CheckBox new_ck = new CheckBox();
             Button new_btnMemo = new Button();
+            //Panel new_panel = new Panel();
+            FlowLayoutPanel new_panel = new FlowLayoutPanel();
+            new_panel.FlowDirection = FlowDirection.LeftToRight;
 
+            new_panel.Size = new System.Drawing.Size(690, 30);
+            new_panel.BackColor = System.Drawing.Color.LightSteelBlue;
+            new_panel.Name = $"fp{todoCnt}";
+
+            new_ck.Name = $"ck {todoCnt}";
+            new_ck.Click += (s, e) => _mainform.chk_CheckedChanged(this, new ck_state(new_ck));
+            new_ck.Margin = new Padding(20,2,20,0);
+            
+
+            new_title.Text = title;
+            //new_title.AutoSize = true;
+            new_title.Name = $"title{todoCnt}";
+            new_title.Margin = new Padding(20, 5, 20, 0);
+
+            new_date.Text = String.Format("{0:yy/MM/dd(ddd)}", date);
+            //new_date.AutoSize = true;
+            new_date.Name = $"date{todoCnt}";
+            new_date.Margin = new Padding(50, 5, 20, 0);
+
+            new_btnMemo.Click += new System.EventHandler(this.click_memo);
+            new_btnMemo.Text = "메모";
+            new_btnMemo.Name = $"memobtn{todoCnt}";
+            new_btnMemo.Margin = new Padding(100, 3, 20, 0);
+
+            todoCnt++;
+
+            new_panel.Controls.Add(new_ck);
+            new_panel.Controls.Add(new_title);
+            new_panel.Controls.Add(new_date);
+            new_panel.Controls.Add(new_btnMemo);
+
+            _mainform.fPanelTodoList.Controls.Add(new_panel);
+
+            this.Close();
+
+            /*
             new_ck.Location = new Point(150, todoCnt * 30);
             new_ck.Name = $"ck{todoCnt}";
             new_ck.Click += (s, e) => _mainform.chk_CheckedChanged(this, new ck_state(new_ck));
@@ -80,6 +119,7 @@ namespace TodoApp
             _mainform.panelTodoList.Controls.Add(new_btnMemo);
 
             this.Close();
+            */
         }
 
         private void click_memo(object sender, EventArgs e)

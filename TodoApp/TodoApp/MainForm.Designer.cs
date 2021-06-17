@@ -40,6 +40,8 @@ namespace TodoApp
             this.btnAddTodo = new System.Windows.Forms.Button();
             this.labelFont = new System.Windows.Forms.Label();
             this.btnAlarm = new System.Windows.Forms.Label();
+            this.gridTodoList = new System.Windows.Forms.DataGridView();
+            this.fPanelTodoList = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl.SuspendLayout();
             this.tabTodo.SuspendLayout();
             this.tabDone.SuspendLayout();
@@ -58,7 +60,7 @@ namespace TodoApp
             // 
             // tabTodo
             // 
-            this.tabTodo.Controls.Add(this.panelTodoList);
+            this.tabTodo.Controls.Add(this.fPanelTodoList);
             this.tabTodo.Location = new System.Drawing.Point(4, 24);
             this.tabTodo.Name = "tabTodo";
             this.tabTodo.Padding = new System.Windows.Forms.Padding(3);
@@ -74,6 +76,17 @@ namespace TodoApp
             this.panelTodoList.Name = "panelTodoList";
             this.panelTodoList.Size = new System.Drawing.Size(690, 370);
             this.panelTodoList.TabIndex = 0;
+            //gridTodoList
+
+            this.gridTodoList.Location = new System.Drawing.Point(0, 0);
+            this.gridTodoList.Name = "gridTodoList";
+            this.gridTodoList.Size = new System.Drawing.Size(690, 370);
+
+            this.fPanelTodoList.Location = new System.Drawing.Point(0, 0);
+            this.fPanelTodoList.Name = "fPanelTodoList";
+            this.fPanelTodoList.Size = new System.Drawing.Size(690, 370);
+
+
             // 
             // tabDone
             // 
@@ -157,6 +170,8 @@ namespace TodoApp
 
         public System.Windows.Forms.Panel panelTodoList; //
         public System.Windows.Forms.Panel panelDoneList; //
+        public System.Windows.Forms.DataGridView gridTodoList;//
+        public System.Windows.Forms.FlowLayoutPanel fPanelTodoList;//
     }
 }
 

@@ -1,0 +1,14 @@
+<done>
+  <todo>
+    <id>1</id>
+    <title>운동</title>
+    <deadline>21-06-14(월)</deadline>
+    <memo>달리기</memo>
+  </todo>
+  <todo>
+    <id>2</id>
+    <title>캡스톤</title>
+    <deadline>21-06-15(화)</deadline>
+    <memo>수상</memo>
+  </todo>
+</done>

@@ -12,13 +12,15 @@ namespace TodoApp
 {
     public partial class MainForm : Form
     {
-        public event EventHandler ck_eventHandler;
+        //public event EventHandler ck_eventHandler;
+        LabelManager manager;
 
         public static int cnt = 1;
 
         public MainForm()
         {
             InitializeComponent();
+            manager = new LabelManager(this); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,11 +51,7 @@ namespace TodoApp
         public void chk_CheckedChanged(object sender, EventArgs e) //영화 
         {
             AddTodoForm form = (AddTodoForm)sender;
-            //CheckBox form_ = (CheckBox)sender;
-            //ck_state
-            //String name = ((AddTodoForm)sender).Name;
-            //MessageBox.Show($"{name}");
-
+            
             CheckBox _ck = (e as AddTodoForm.ck_state).ck;
 
             change_state_todo(_ck);
@@ -63,8 +61,35 @@ namespace TodoApp
         {
             if (cb.Checked)
             {
-                MessageBox.Show($"{cb.Name}");
+                string[] NameString = cb.Name.Split('\x020');
+                int todoNum = int.Parse(NameString[1]);
+
+                
+
+                //fPanelTodoList.Controls.Remove(cb);
+
+                Control c = GetControlByName($"fp{todoNum}");
+
+                if (c != null) 
+                {
+                    fPanelTodoList.Controls.Remove(GetControlByName($"fp{todoNum}"));
+                }
+                else
+                {
+                    MessageBox.Show($"{todoNum}");
+                }
+
+
             }
+        }
+
+        Control GetControlByName(string Name)
+        {
+            foreach (Control c in this.fPanelTodoList.Controls)
+                if (c.Name == Name)
+                    return c;
+
+            return null;
         }
 
 
