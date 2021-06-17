@@ -50,12 +50,22 @@ namespace TodoApp
 
         public void chk_CheckedChanged(object sender, EventArgs e) //영화 
         {
-            AddTodoForm form = (AddTodoForm)sender;
-            
-            CheckBox _ck = (e as AddTodoForm.ck_state).ck;
+            //AddTodoForm form = (AddTodoForm)sender;
+            CheckBox _ck = null;
 
+            if (sender is TodoApp.AddTodoForm)
+            {
+                _ck = (e as AddTodoForm.ck_state).ck;
+            }
+            else if (sender is TodoApp.LabelManager)
+            {
+                _ck = (e as LabelManager.ck_state).ck;
+            }
+            
             change_state_todo(_ck);
         }
+
+        //public 
 
         public void change_state_todo(CheckBox cb)
         {
@@ -64,26 +74,56 @@ namespace TodoApp
                 string[] NameString = cb.Name.Split('\x020');
                 int todoNum = int.Parse(NameString[1]);
 
-                
-
-                //fPanelTodoList.Controls.Remove(cb);
-
                 Control c = GetControlByName($"fp{todoNum}");
 
                 if (c != null) 
                 {
-                    fPanelTodoList.Controls.Remove(GetControlByName($"fp{todoNum}"));
+                    fPanelTodoList.Controls.Remove(c);
                 }
                 else
                 {
                     MessageBox.Show($"{todoNum}");
                 }
 
+                //todo -> done
 
+                Todo todo = null;
+                Done new_done = new Done();
+
+
+                new_done.Id = LabelManager.doneCnt;
+
+
+                foreach (Todo td in LabelManager.Todos)
+                {
+                    
+                    if (td.Id == todoNum)
+                    {
+                        todo = td;
+                    }
+                    //MessageBox.Show($"{td.Id} + {todoNum}");
+                }
+
+                //todo = LabelManager.Todos[todoNum - 1];
+                new_done.Title = todo.Title;
+                new_done.Memo = todo.Memo;
+                new_done.DeadLine = todo.DeadLine;
+
+                LabelManager.doneCnt++;
+                //LabelManager.todoCnt--;
+
+                //LabelManager.Todos.RemoveAt(todoNum - 1);
+                LabelManager.Todos.Remove(todo);
+                LabelManager.Dones.Add(new_done);
+
+                LabelManager.SaveDone();
+                LabelManager.SaveTodo();
+
+                manager.addDone(new_done);
             }
         }
 
-        Control GetControlByName(string Name)
+        public Control GetControlByName(string Name)
         {
             foreach (Control c in this.fPanelTodoList.Controls)
                 if (c.Name == Name)

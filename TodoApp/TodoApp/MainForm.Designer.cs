@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics.Tracing;
 using System.Windows.Forms;
 
 namespace TodoApp
@@ -34,17 +35,18 @@ namespace TodoApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabTodo = new System.Windows.Forms.TabPage();
-            this.panelTodoList = new System.Windows.Forms.Panel();
+            this.fPanelTodoList = new System.Windows.Forms.FlowLayoutPanel();
             this.tabDone = new System.Windows.Forms.TabPage();
-            this.panelDoneList = new System.Windows.Forms.Panel();
+            this.panelDoneList = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelTodoList = new System.Windows.Forms.Panel();
             this.btnAddTodo = new System.Windows.Forms.Button();
             this.labelFont = new System.Windows.Forms.Label();
             this.btnAlarm = new System.Windows.Forms.Label();
             this.gridTodoList = new System.Windows.Forms.DataGridView();
-            this.fPanelTodoList = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl.SuspendLayout();
             this.tabTodo.SuspendLayout();
             this.tabDone.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTodoList)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -70,23 +72,15 @@ namespace TodoApp
             this.tabTodo.UseVisualStyleBackColor = true;
             this.tabTodo.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // panelTodoList
+            // fPanelTodoList
             // 
-            this.panelTodoList.Location = new System.Drawing.Point(0, 0);
-            this.panelTodoList.Name = "panelTodoList";
-            this.panelTodoList.Size = new System.Drawing.Size(690, 370);
-            this.panelTodoList.TabIndex = 0;
-            //gridTodoList
-
-            this.gridTodoList.Location = new System.Drawing.Point(0, 0);
-            this.gridTodoList.Name = "gridTodoList";
-            this.gridTodoList.Size = new System.Drawing.Size(690, 370);
+            
 
             this.fPanelTodoList.Location = new System.Drawing.Point(0, 0);
             this.fPanelTodoList.Name = "fPanelTodoList";
-            this.fPanelTodoList.Size = new System.Drawing.Size(690, 370);
-
-
+            this.fPanelTodoList.Size = new System.Drawing.Size(680, 370);
+            this.fPanelTodoList.TabIndex = 0;
+            
             // 
             // tabDone
             // 
@@ -101,11 +95,18 @@ namespace TodoApp
             // 
             // panelDoneList
             // 
-            this.panelDoneList.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelDoneList.BackColor = System.Drawing.Color.CadetBlue;
             this.panelDoneList.Location = new System.Drawing.Point(0, 0);
             this.panelDoneList.Name = "panelDoneList";
             this.panelDoneList.Size = new System.Drawing.Size(690, 370);
             this.panelDoneList.TabIndex = 0;
+            // 
+            // panelTodoList
+            // 
+            this.panelTodoList.Location = new System.Drawing.Point(0, 0);
+            this.panelTodoList.Name = "panelTodoList";
+            this.panelTodoList.Size = new System.Drawing.Size(690, 370);
+            this.panelTodoList.TabIndex = 0;
             // 
             // btnAddTodo
             // 
@@ -139,6 +140,13 @@ namespace TodoApp
             this.btnAlarm.TabIndex = 4;
             this.btnAlarm.Text = "  ";
             // 
+            // gridTodoList
+            // 
+            this.gridTodoList.Location = new System.Drawing.Point(0, 0);
+            this.gridTodoList.Name = "gridTodoList";
+            this.gridTodoList.Size = new System.Drawing.Size(690, 370);
+            this.gridTodoList.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -154,6 +162,7 @@ namespace TodoApp
             this.tabControl.ResumeLayout(false);
             this.tabTodo.ResumeLayout(false);
             this.tabDone.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTodoList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +178,7 @@ namespace TodoApp
         private System.Windows.Forms.Label btnAlarm;
 
         public System.Windows.Forms.Panel panelTodoList; //
-        public System.Windows.Forms.Panel panelDoneList; //
+        public System.Windows.Forms.FlowLayoutPanel panelDoneList; //
         public System.Windows.Forms.DataGridView gridTodoList;//
         public System.Windows.Forms.FlowLayoutPanel fPanelTodoList;//
     }
