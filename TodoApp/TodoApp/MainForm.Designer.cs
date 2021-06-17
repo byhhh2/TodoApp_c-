@@ -74,13 +74,10 @@ namespace TodoApp
             // 
             // fPanelTodoList
             // 
-            
-
             this.fPanelTodoList.Location = new System.Drawing.Point(0, 0);
             this.fPanelTodoList.Name = "fPanelTodoList";
             this.fPanelTodoList.Size = new System.Drawing.Size(680, 370);
             this.fPanelTodoList.TabIndex = 0;
-            
             // 
             // tabDone
             // 
@@ -139,6 +136,7 @@ namespace TodoApp
             this.btnAlarm.Size = new System.Drawing.Size(51, 54);
             this.btnAlarm.TabIndex = 4;
             this.btnAlarm.Text = "  ";
+            this.btnAlarm.Click += new System.EventHandler(this.click_alarm);
             // 
             // gridTodoList
             // 

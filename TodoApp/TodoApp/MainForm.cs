@@ -132,6 +132,9 @@ namespace TodoApp
             return null;
         }
 
-
+        private void click_alarm(object sender, EventArgs e)
+        {
+            new Alarm(this).Show();
+        }
     }
 }

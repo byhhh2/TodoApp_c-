@@ -1,5 +1,5 @@
 <todos>
-<todoNum>2</todoNum>
+<todoNum>5</todoNum>
 <todo>
   <id>1</id>
   <title>c#공부</title>
@@ -11,5 +11,24 @@
   <title>프로젝트</title>
   <deadline>2021년 6월 22일 화요일</deadline>
   <memo>레이아웃 구성</memo>
+</todo>
+<todo>
+  <id>3</id>
+  <title>c# 프로젝트 제출</title>
+  <deadline>2021년 6월 19일 토요일</deadline>
+  <memo>todoApp
+</memo>
+</todo>
+<todo>
+  <id>4</id>
+  <title>종강</title>
+  <deadline>2021년 6월 21일 월요일</deadline>
+  <memo>종강이다~</memo>
+</todo>
+<todo>
+  <id>5</id>
+  <title>영상처리 시험</title>
+  <deadline>2021년 6월 14일 월요일</deadline>
+  <memo>이미 지남</memo>
 </todo>
 </todos>

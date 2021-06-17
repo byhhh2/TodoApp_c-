@@ -18,3 +18,5 @@ C:\Users\GP62\Desktop\TodoApp\TodoApp\obj\Debug\net5.0-windows\TodoApp.genruntim
 C:\Users\GP62\Desktop\TodoApp\TodoApp\obj\Debug\net5.0-windows\TodoApp.MainForm.resources
 C:\Users\GP62\Desktop\TodoApp\TodoApp\obj\Debug\net5.0-windows\TodoApp.Properties.Resources.resources
 C:\Users\GP62\Desktop\TodoApp\TodoApp\obj\Debug\net5.0-windows\TodoApp.AddTodoForm.resources
+C:\Users\GP62\Desktop\TodoApp\TodoApp\obj\Debug\net5.0-windows\TodoApp.Alarm.resources
+C:\Users\GP62\Desktop\TodoApp\TodoApp\obj\Debug\net5.0-windows\TodoApp.LoadAlarm.resources

@@ -12,6 +12,7 @@ namespace TodoApp
     class LabelManager
     {
         MainForm _mainForm;
+        DateTime nowTime;
         static public int todoCnt = 1;
         static public int doneCnt = 1;
 
@@ -30,6 +31,7 @@ namespace TodoApp
             //GridSet();
             LoadTodo();
             LoadDone();
+            LoadTimer();
         }
 
 
@@ -273,6 +275,42 @@ namespace TodoApp
             {
                 this.ck = ck;
             }
+        }
+
+        public void LoadTimer()
+        {
+            nowTime = System.DateTime.Now;
+            LoadAlarm load_alarm = new LoadAlarm();
+
+            foreach (Todo todo in Todos)
+            {
+                TimeSpan dt = todo.DeadLine - nowTime;
+
+                if (dt.Days < 3)
+                {
+                    //load_alarm.fPanelLoadAlarm.Controls.Add()
+
+
+                    Panel new_panel = new Panel();
+                    Label new_label = new Label();
+
+                    if (dt.Days >= 0 && dt.Hours >= 0 && dt.Minutes >= 0)
+                    {
+                        new_label.Text = $"{todo.Title} ✔ 마감까지 {dt.Days}일 {dt.Hours}시간";
+                    }
+                    else
+                    {
+                        
+                    }
+                   
+                    new_panel.Size = new System.Drawing.Size(300, 20);
+                    new_label.AutoSize = true;
+
+                    new_panel.Controls.Add(new_label);
+                    load_alarm.fPanelLoadAlarm.Controls.Add(new_panel);
+                }
+            }
+            load_alarm.Show();
         }
 
     }
