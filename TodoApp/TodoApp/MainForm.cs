@@ -12,7 +12,6 @@ namespace TodoApp
 {
     public partial class MainForm : Form
     {
-        //public event EventHandler ck_eventHandler;
         LabelManager manager;
 
         public static int cnt = 1;
@@ -48,9 +47,8 @@ namespace TodoApp
             new AddTodoForm(this).ShowDialog();
         }
 
-        public void chk_CheckedChanged(object sender, EventArgs e) //영화 
+        public void chk_CheckedChanged(object sender, EventArgs e) 
         {
-            //AddTodoForm form = (AddTodoForm)sender;
             CheckBox _ck = null;
 
             if (sender is TodoApp.AddTodoForm)
@@ -65,7 +63,6 @@ namespace TodoApp
             change_state_todo(_ck);
         }
 
-        //public 
 
         public void change_state_todo(CheckBox cb)
         {
@@ -85,7 +82,6 @@ namespace TodoApp
                     MessageBox.Show($"{todoNum}");
                 }
 
-                //todo -> done
 
                 Todo todo = null;
                 Done new_done = new Done();
@@ -101,18 +97,14 @@ namespace TodoApp
                     {
                         todo = td;
                     }
-                    //MessageBox.Show($"{td.Id} + {todoNum}");
                 }
 
-                //todo = LabelManager.Todos[todoNum - 1];
                 new_done.Title = todo.Title;
                 new_done.Memo = todo.Memo;
                 new_done.DeadLine = todo.DeadLine;
 
                 LabelManager.doneCnt++;
-                //LabelManager.todoCnt--;
 
-                //LabelManager.Todos.RemoveAt(todoNum - 1);
                 LabelManager.Todos.Remove(todo);
                 LabelManager.Dones.Add(new_done);
 

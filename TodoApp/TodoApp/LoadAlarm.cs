@@ -16,5 +16,10 @@ namespace TodoApp
         {
             InitializeComponent();
         }
+
+        private void fPanelLoadAlarm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

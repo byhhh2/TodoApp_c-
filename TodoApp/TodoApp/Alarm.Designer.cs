@@ -40,11 +40,13 @@ namespace TodoApp
             this.panelAlarm.Name = "panelAlarm";
             this.panelAlarm.Size = new System.Drawing.Size(419, 232);
             this.panelAlarm.TabIndex = 0;
+            this.panelAlarm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAlarm_Paint);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
             this.lblTitle.Location = new System.Drawing.Point(32, 23);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(59, 28);
@@ -63,6 +65,7 @@ namespace TodoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 322);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);

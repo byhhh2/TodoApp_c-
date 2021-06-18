@@ -92,7 +92,7 @@ namespace TodoApp
             // 
             // panelDoneList
             // 
-            this.panelDoneList.BackColor = System.Drawing.Color.CadetBlue;
+            this.panelDoneList.BackColor = System.Drawing.Color.White;
             this.panelDoneList.Location = new System.Drawing.Point(0, 0);
             this.panelDoneList.Name = "panelDoneList";
             this.panelDoneList.Size = new System.Drawing.Size(690, 370);
@@ -107,23 +107,27 @@ namespace TodoApp
             // 
             // btnAddTodo
             // 
+            this.btnAddTodo.BackColor = System.Drawing.Color.White;
+            this.btnAddTodo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAddTodo.FlatAppearance.BorderSize = 0;
             this.btnAddTodo.Location = new System.Drawing.Point(145, 108);
             this.btnAddTodo.Name = "btnAddTodo";
             this.btnAddTodo.Size = new System.Drawing.Size(98, 32);
             this.btnAddTodo.TabIndex = 1;
             this.btnAddTodo.Text = "Add Todo";
-            this.btnAddTodo.UseVisualStyleBackColor = true;
+            this.btnAddTodo.UseVisualStyleBackColor = false;
             this.btnAddTodo.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // labelFont
             // 
             this.labelFont.AutoSize = true;
-            this.labelFont.Font = new System.Drawing.Font("맑은 고딕", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelFont.Location = new System.Drawing.Point(459, 25);
+            this.labelFont.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelFont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
+            this.labelFont.Location = new System.Drawing.Point(441, 24);
             this.labelFont.Name = "labelFont";
-            this.labelFont.Size = new System.Drawing.Size(76, 31);
+            this.labelFont.Size = new System.Drawing.Size(92, 40);
             this.labelFont.TabIndex = 3;
-            this.labelFont.Text = "To do";
+            this.labelFont.Text = "ToDo";
             // 
             // btnAlarm
             // 
@@ -148,6 +152,7 @@ namespace TodoApp
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 621);
             this.Controls.Add(this.btnAlarm);
             this.Controls.Add(this.labelFont);

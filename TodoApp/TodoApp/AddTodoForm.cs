@@ -13,9 +13,6 @@ namespace TodoApp
 {
     public partial class AddTodoForm : Form
     {
-
-        //public static int todoCnt = 1;
-
         MainForm _mainform;
 
         public AddTodoForm()
@@ -42,22 +39,20 @@ namespace TodoApp
         private void submit_todo(object sender, EventArgs e)
         {
             String title = txtTitle.Text;
-            
             DateTime date = dateTimePicker.Value;
+
 
             Label new_title = new Label();
             Label new_date = new Label();
             CheckBox new_ck = new CheckBox();
             Button new_btnMemo = new Button();
             Button new_btnDelete = new Button();
-            //Panel new_panel = new Panel();
             FlowLayoutPanel new_panel = new FlowLayoutPanel();
             new_panel.FlowDirection = FlowDirection.LeftToRight;
 
             LabelManager.todoCnt++;
 
             new_panel.Size = new System.Drawing.Size(670, 30);
-            new_panel.BackColor = System.Drawing.Color.LightSteelBlue;
             new_panel.Name = $"fp{LabelManager.todoCnt}";
 
             new_ck.Name = $"ck {LabelManager.todoCnt}";
@@ -66,22 +61,25 @@ namespace TodoApp
             
 
             new_title.Text = title;
-            //new_title.AutoSize = true;
             new_title.Name = $"title{LabelManager.todoCnt}";
             new_title.Margin = new Padding(20, 5, 20, 0);
 
             new_date.Text = String.Format("{0:yy/MM/dd(ddd)}", date);
-            //new_date.AutoSize = true;
             new_date.Name = $"date{LabelManager.todoCnt}";
             new_date.Margin = new Padding(50, 5, 20, 0);
+            new_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
+            new_date.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 
             new_btnMemo.Click += new System.EventHandler(this.click_memo);
             new_btnMemo.Text = "메모";
             new_btnMemo.Name = $"memobtn{LabelManager.todoCnt}";
             new_btnMemo.Margin = new Padding(50, 3, 0, 0);
+            new_btnMemo.BackColor = System.Drawing.Color.White;
+
 
             new_btnDelete.Text = "삭제";
             new_btnDelete.Name = $"delete {LabelManager.todoCnt}";
+            new_btnDelete.BackColor = System.Drawing.Color.White;
 
             Todo new_todo = new Todo();
 
@@ -107,44 +105,9 @@ namespace TodoApp
 
             _mainform.fPanelTodoList.Controls.Add(new_panel);
 
-            
-
-            
 
             this.Close();
 
-            /*
-            new_ck.Location = new Point(150, todoCnt * 30);
-            new_ck.Name = $"ck{todoCnt}";
-            new_ck.Click += (s, e) => _mainform.chk_CheckedChanged(this, new ck_state(new_ck));
-           
-
-            new_title.Text = title;
-            new_title.Location = new Point(250, todoCnt * 30);
-            new_title.AutoSize = true;
-            new_title.Name = $"title{todoCnt}";
-
-            new_date.Text = String.Format("{0:yy/MM/dd(ddd)}", date);
-            new_date.Location = new Point(350, todoCnt * 30);
-            new_date.AutoSize = true;
-            new_date.Name = $"date{todoCnt}";
-
-
-            new_btnMemo.Click += new System.EventHandler(this.click_memo);
-            new_btnMemo.Text = "메모";
-            new_btnMemo.Location = new Point(450, todoCnt * 30);
-            new_btnMemo.Name = $"memobtn{todoCnt}";
-
-
-            todoCnt++;
-
-            _mainform.panelTodoList.Controls.Add(new_ck);
-            _mainform.panelTodoList.Controls.Add(new_title);
-            _mainform.panelTodoList.Controls.Add(new_date);
-            _mainform.panelTodoList.Controls.Add(new_btnMemo);
-
-            this.Close();
-            */
         }
 
         private void click_memo(object sender, EventArgs e)
@@ -159,6 +122,11 @@ namespace TodoApp
             {
                 this.ck = ck;
             }
+        }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

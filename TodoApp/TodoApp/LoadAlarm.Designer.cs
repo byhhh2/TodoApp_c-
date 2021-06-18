@@ -37,6 +37,7 @@ namespace TodoApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
             this.label1.Location = new System.Drawing.Point(26, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 28);
@@ -45,15 +46,18 @@ namespace TodoApp
             // 
             // fPanelLoadAlarm
             // 
+            this.fPanelLoadAlarm.ForeColor = System.Drawing.Color.Black;
             this.fPanelLoadAlarm.Location = new System.Drawing.Point(26, 83);
             this.fPanelLoadAlarm.Name = "fPanelLoadAlarm";
             this.fPanelLoadAlarm.Size = new System.Drawing.Size(314, 149);
             this.fPanelLoadAlarm.TabIndex = 1;
+            this.fPanelLoadAlarm.Paint += new System.Windows.Forms.PaintEventHandler(this.fPanelLoadAlarm_Paint);
             // 
             // LoadAlarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(368, 274);
             this.Controls.Add(this.fPanelLoadAlarm);
             this.Controls.Add(this.label1);

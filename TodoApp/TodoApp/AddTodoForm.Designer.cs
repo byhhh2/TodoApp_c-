@@ -42,10 +42,11 @@ namespace TodoApp
             // explain
             // 
             this.explain.AutoSize = true;
-            this.explain.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.explain.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.explain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
             this.explain.Location = new System.Drawing.Point(43, 34);
             this.explain.Name = "explain";
-            this.explain.Size = new System.Drawing.Size(196, 25);
+            this.explain.Size = new System.Drawing.Size(227, 30);
             this.explain.TabIndex = 0;
             this.explain.Text = "✔ 할 일 등록하기 ✔";
             this.explain.Click += new System.EventHandler(this.label1_Click);
@@ -53,6 +54,8 @@ namespace TodoApp
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
             this.lblTitle.Location = new System.Drawing.Point(58, 114);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(31, 15);
@@ -63,6 +66,8 @@ namespace TodoApp
             // lblDeadline
             // 
             this.lblDeadline.AutoSize = true;
+            this.lblDeadline.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDeadline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
             this.lblDeadline.Location = new System.Drawing.Point(58, 160);
             this.lblDeadline.Name = "lblDeadline";
             this.lblDeadline.Size = new System.Drawing.Size(55, 15);
@@ -72,6 +77,8 @@ namespace TodoApp
             // lblMemo
             // 
             this.lblMemo.AutoSize = true;
+            this.lblMemo.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMemo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
             this.lblMemo.Location = new System.Drawing.Point(58, 204);
             this.lblMemo.Name = "lblMemo";
             this.lblMemo.Size = new System.Drawing.Size(31, 15);
@@ -99,6 +106,9 @@ namespace TodoApp
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(224, 23);
             this.dateTimePicker.TabIndex = 7;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
+            this.dateTimePicker.MinDate = System.DateTime.Now.AddDays(1);
+
             // 
             // btnAdd
             // 
@@ -114,6 +124,7 @@ namespace TodoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(452, 477);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dateTimePicker);
